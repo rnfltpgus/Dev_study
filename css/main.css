@@ -1,0 +1,41 @@
+[type="text"] {
+  background-origin: orange;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  transition: 1s;
+}
+.box::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: royalblue;
+}
+.box:active {
+  width: 300px;
+  background-color:salmon;
+}
+input {
+
+}
+input:focus {
+  background-color: orange;
+}
+
+[data-fruit-name] {
+  color: red;
+}
+
+.parent {
+  width: 300px;
+  height: 400px;
+  background-color: orange;
+}
+.child {
+  width: 100px;
+  height: inherit;
+  background-color: orange;
+}
