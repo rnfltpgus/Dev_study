@@ -1,0 +1,18 @@
+body {
+  height: 3000px;
+}
+div {
+  width: 200px;
+  height: 200px;
+  background-color: orange; 
+  /* 백그라운드 컬러는 이미지 뒤에 나옴, 백그라운드 이미지는 컬러 앞에 나옴 */
+  background-image: url("https://heropy.blog/css/images/logo.png");
+  background-size: cover;
+  /* 요소의 배경 이미지 크기 보통기본값은 오토 그외 단위나 cover, contain 등이 있음 */
+  background-repeat: no-repeat;
+  /* 요소의 배경 이미지 반복을 그만하게 하거나 반복하게 하거나 지정가능한 코드 */
+  background-position: center;
+  /* 이미지를 배경안에서 위치를 어디다 둘지 지정할 수 있는 코드 */
+  background-attachment: scroll;
+  /* 요소의 배경 이미지 스크롤 특성 기본값으로는 scroll이며(이미지가 요소를 따라서 같이 스크롤), fixed(이미지가 뷰포트에 고정, 스크롤 없음) */
+}
