@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Input Attributes</title>
+    </head>
+    <body>
+      	<h1>value 속성을 이용한 초기값 설정</h1>
+        <form action="/examples/media/request.php">
+            이름 : <input type="text" name="studet_name"><br>
+            사번 : <input type="text" name="studet_id"><br>
+            회사 : <input type="text" name="department" value="(주)CS"><br>
+            <input type="submit" value="전송">
+        </form>
+        <!-- value 속성은 input 요소의 입력 필드(input field)에 나타나는 초깃값을 설정 -->
+<br>
+<br>
+       	<h1>readonly 속성을 이용한 필드값 수정 제한</h1>
+        <form action="/examples/media/request.php">
+            이름 : <input type="text" name="studet_name"><br>
+            사번 : <input type="text" name="studet_id"><br>
+            회사 : <input tpye="text" name="department" value="(주)CS" readonly><br>
+            <input type="submit" value="전송">  
+        </form>
+        <!-- disabled 속성과 다른 점은 전송 버튼(submit)을 누르면 초깃값이 서버로 전송됨 -->
+<br>
+<br>
+    	<h1>disabled 속성을 이용한 필드 사용 제한</h1>
+        <form action="/examples/media/request.php">
+            이름 : <input type="text" name="student_name"><br>
+            사번 : <input type="text" name="student_id"><br>
+            회사 : <input type="text" name="department" value="(주)CS" disabled><br>
+            <input type="submit" value="전송">
+        </form>
+        <!-- readonly 속성과는 달리 전송 버튼(submit)을 눌러도 초깃값이 서버로 전송되지 않음 -->
+<br>
+<br>
+        <h1>maxlength 속성을 이용한 필드의 최대 길이 설정</h1>
+        <form action="/examples/media/request.php">
+            이름 : <input type="text" name="student_name" value="10자까지만 작성가능" maxlength="10"><br>
+            학번 : <input type="text" name="student_id"><br>
+            <input type="submit" value="전송">
+        </form>
+        <!-- maxlength 속성은 입력 필드에 입력할 수 있는 문자의 최대 길이(length)를 설정 -->
+<br>
+<br>
+    	<h1>size 속성을 이용한 필드의 크기 설정</h1>
+        <form action="/examples/media/request.php">
+            이름 : <input type="text" name="student_name" value="홍길동" size="30"><br>
+            학번 : <input type="text" name="student_id"><br>
+            <input type="submit" value="전송">
+        </form>
+        <!-- size 속성은 입력 필드에 보여지는 input 요소의 크기(size)를 설정 -->
+        <!-- maxlength 속성과는 달리 입력 필드가 한 번에 보여줄 수 있는 문자의 최대 개수만을 의미 -->
+        <!-- 입력될 수 있는 문자의 최대 길이는 maxlength 속성값에 따라 달라지며, size 속성과는 전혀 무관 -->
+    </body>
+</html>

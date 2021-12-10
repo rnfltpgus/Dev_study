@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <title>HTML Forms</title>
+    </head>
+    <body>
+        <h1>텍스트입력</h1>
+            <form action="https://www.naver.com/">
+                검색할 내용을 입력하세요 : <input type="text" name="search">
+            </form>
+            <form>
+                사용자 : <input type="text" name="username"><br>
+                비밀번호 : <input type="password" name="password">     
+            </form>
+<br>
+<br>  
+          	<h1>필드셋</h1>
+                <form action="/examples/media/request.php">
+                    <fieldset>
+                        <legend>입력 양식</legend>
+                        이름 : <br>
+                        <input type="text" name="username"><br>
+                        이메일 : <br>
+                        <input type="text" name="email"><br><br>
+                        <input type="submit" value="전송">
+                    </fieldset>
+                </form>
+<br>
+<br>  
+            <h1>버튼 입력</h1>
+	        <button type="button" onclick="alert('버튼을 클릭하셨군요!')">버튼을 눌러주세요.</button>
+<br>
+<br>
+            <h1>전송버튼</h1>
+            <form action="/examples/media/request.php">
+                오늘 혼내주고 싶은 사람의 이름을 적어주세요. <br>
+                <input type="text" name="nickname" value="이름"><br>
+                <input type="submit" value="전송">
+            </form>
+            <p>이름을 적은 후 전송 버택을 누르세요.</p>
+<br>
+<br>        
+         	<h1>라디오 버튼</h1>
+        	<p>다음 중 싫은 사람을 한명만 골라주세요.</p>
+            	<form>
+		            <input type="radio" name="lecture" value="html" checked> JUNG <br>
+                    <input type="radio" name="lecture" value="css"> GO <br>
+                    <input type="radio" name="lecture" value="java"> TTEOB <br>
+                    <input type="radio" name="lecture" value="cpp"> FOR
+	            </form>
+<br>
+<br>
+	      	<h1>체크박스</h1>
+	        <p>다음 중 싫은 사람을 모두 골라주세요.</p>
+                <form>
+                    <input type="checkbox" name="lecture" value="html" checked> JUNG <br>
+                    <input type="checkbox" name="lecture" value="css"> GO <br>
+                    <input type="checkbox" name="lecture" value="java"> TTEOB <br>
+                    <input type="checkbox" name="lecture" value="cpp" disabled> FOR
+                </form>    
+<br>
+<br>
+            <h1>파일 선택 박스</h1>
+            <p>여러분이 가장 행복했던 날의 사진을 선택해 주세요.</p>
+                <form>
+                    <input type="file" name="upload_file" accept="image/*">
+                </form>
+<br>
+<br>
+            <h1>선택 입력</h1>
+            <p>다음 중 여러분이 가장 좋아하는 과일을 골라주세요.</p>
+                <form>
+                    <select name="fruit">
+                        <option value="apple"> 사과 </option>
+                        <option value="orange" selected> 귤 </option>
+                        <option value="strawberry"> 딸기 </option>
+                        <option value="peach"> 복숭아 </option>
+                    </select>
+                </form>
+<br>
+<br>        
+            <h1>문장 입력</h1>
+            <p>여러분의 부모님께 하고 싶은 말을 적어보세요.</p>
+                <form>
+                    <textarea name="message" rows="5" cols="50">여기에 적으세요.</textarea>
+                </form>
+<br>
+<br>
+
+
+    </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML5 Semantic Elements</title>
+        <style>
+            #header {        		
+        		background-color:#d7f5ff;
+                border:2px solid #09c;
+                width:99%;
+                height:100%;
+                padding:10px;
+            }
+            #nav {
+                background-color:#ffe7d5;
+                border:2px solid red;
+                color:crimson;
+                width:99%;
+                height:100%;
+                float:left;
+                padding:10px;
+            }
+            #section {
+                background-color:darkseagreen;
+                border:4px solid orange;
+                width:30%;
+                height:100%;
+                text-align:left;
+                float:left;
+                padding:10px;
+            }
+            #figure {
+                background-color:plum;
+                color:aliceblue;
+                border:4px solid darksalmon;
+                width:62%;
+                height:100%;
+                float:right;
+                padding:10px;
+            }
+            #footer {
+                background-color:black;
+                color: aliceblue;
+                border:2px solid black;
+                width:99%;
+                height:100%;
+                clear:both;
+                padding:10px;
+            }
+            #nav, #section, #footer { text-align:left; }
+            #header { line-height:15px; }
+            #nav { line-height:20px; }
+            #section { line-height:23px; }
+            #footer { line-height:10px; }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <header style="text-align:center;">
+                <h1>정센니</h1>
+            </header>
+            <section>
+                <header>
+                    <h2>HTML5</h2>
+                    <ul style="list-style:square;">
+                    <li>공부한 HTML를 모두 적용하여, 만들어보기로 함</li>
+                    </ul>
+                    <form action="/examples/media/request.php" >
+                        <fieldset style="text-align: left">
+                            <legend>로그인</legend>
+                            ID : <input type="text" name="username"><br><br>
+                            PW : <input type="text" name="email"> <input type="submit" value="전송">
+                        </fieldset>
+                    </form>
+
+                </header>
+            </section>
+        </div>
+        <!-- header 요소는 HTML 문서나 섹션(section) 부분에 대한 헤더(header)를 정의, 헤더(header)란 도입부에 해당하는 콘텐츠(content)를 가지고 있는 부분을 의미, 또한, 한 문서 내에 여러 개의 header 요소가 존재할 수 있음 -->
+        <div id="nav">
+        <nav style="text-align:center">
+            <a href="01.%20%EC%95%88%EC%96%91%20%EC%9D%B4%EC%A7%80%ED%8C%9C%20%EC%82%AC%EA%B1%B4.html">일기</a> ｜
+            <a href="%EB%A6%AC%EC%8A%A4%ED%8A%B8.html">리스트 종류</a> ｜
+            <a href="form%EC%9A%94%EC%86%8C.html">form요소</a> ｜
+            <a href="%EC%A0%95%EC%84%BC%EB%8B%88%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83.html">레이아웃</a> ｜
+            <a href="%EB%B8%94%EB%A1%9D%EA%B3%BC%20%EC%9D%B8%EB%9D%BC%EC%9D%B8.html">블록과 인라인</a> ｜
+            <a href="input%EC%9A%94%EC%86%8C%EC%9D%98%20%EC%86%8D%EC%84%B1.html">input요소의 속성</a> ｜
+            <a href="html%EA%B3%BCcss.html">html과 css</a>
+            <p style="text-align:left">작업한 HTML에 대한 문서를 링크 걸어둠</p>
+        </nav>
+        </div>
+        <!-- nav 요소는 HTML 문서 사이를 탐색할 수 있는 링크(link)의 집합을 정의, nav 요소는 링크의 커다란 집합을 의미하지만, 문서 내의 모든 링크가 nav 요소에 포함되는 것은 아님 -->
+        <div id="section">
+            <section>
+                <h2 style="font-size:20px;">일정</h2>
+                <p style="font-size:15px;">2020.03.05(목) - 안양 이지팜 출근</p>
+                    <article style="font-size:10px;">
+                        <p>안녕하십둥. 정센니입니다.</p>
+                        <p>오늘은 출근하여서 html 레이아웃 구성대로 작업을 하고 있습니다.</p>
+                        <p>입맛대로 일단 작업을 해볼까. 하하하</p>
+                    </article>
+                <hr>
+                <p style="font-size:15px;">2020.03.06(금) - 세종으로 </p>
+                    <article style="font-size:10px;">
+                        <p>안녕하십둥. 정센니입니다.</p>
+                        <p>아침 10시경 세종으로 가서 농ㅎ식품빅데이터 활용 및 서비스 기반 강화 테스트가 있을 예정입니다.</p>
+                        <p>허허 이거 참 큰일이군요. 하하하</p>
+                    </article>
+            </section>
+        </div>
+        <!-- section 요소는 HTML 문서에서 섹션(section) 부분을 정의, 섹션(section)이란 제목을 가지고 있으며, HTML 문서의 전체적인 내용과 관련이 있는 콘텐츠들의 집합을 의미함 -->
+        <!-- article 요소는 HTML 문서에서 독립적인 하나의 기사(article) 부분을 정의, article 요소의 내용은 그 자체만으로도 이해가 되어야 하며, 웹 사이트의 나머지 부분과는 별도로 읽을 수 있어야 함 -->
+        <!-- 대체로 section 요소는 HTML 문서의 전체적인 내용에 포함되며, article 요소는 문서의 전체적인 내용과는 별도의 독립적인 내용이 들어갈 때 사용하면 됨 -->
+        <div id="figure">
+            <figure>
+                <h2 style="text-align:center; font-size:20px;">html 레이아웃 구조</h2>
+                <img src="%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83%EC%9D%B4%EB%AF%B8%EC%A7%80.png" alt="html 레이아웃 구조" usemap="#html 레이아웃 구조" width="100%" height="100%">
+                    <map name="html 레이아웃 구조"> 
+                        <area shape="rect" coords="25,13,578,94" alt="header" href="http://tcpschool.com/html-tags/header">
+                        <area shape="rect" coords="175,85,250,150" alt="거짓" href="https://ko.wikipedia.org/wiki/%EA%B1%B0%EC%A7%93%EB%A7%90">
+                    </map>
+                <figcaption style="text-align:center; font-size:1px;">[ 그림영역을 클릭해봄으로써 레이아웃 구조를 알아보자 ]</figcaption>
+            </figure>
+        </div>
+        <!-- 책이나 신문 등에 포함되는 이미지 바로 아래에는 해당 이미지를 설명하는 캡션(caption)이 위치하게 됨, HTML5에서는 위와 같은 목적을 위해 figure 요소와 figcaption 요소를 제공하고 있음 -->
+        <!-- figure 요소는 HTML 문서에서 그래픽과 비디오 등의 독립적인 콘텐츠(content)를 정의할 때 사용, figcaption 요소는 위와 같은 figure 요소를 위한 캡션을 정의할 때 사용 -->
+        <div id="footer">
+            <footer>
+                <p>호기심/궁금증을 끊임없이 해야되</p>
+                <p>정세바리 정센니 2020.03.05. 정센니 all rights reserved.</p>
+                <p>연락처 : 010-5427-2629</p>
+                <p>E-mail : jpp901220@gmail.com</p>
+            </footer>
+        </div>    
+        <!-- footer 요소는 HTML 문서나 섹션(section) 부분에 대한 푸터(footer)을 정의, HTML 문서의 푸터(footer)에는 일반적으로 사이트의 작성자나 그에 따른 저작권 정보, 연락처 등을 명시 -->
+        <!-- 또한, 한 문서 내에 여러 개의 footer 요소가 존재할 수 있음 -->
+    </body>
+</html>
