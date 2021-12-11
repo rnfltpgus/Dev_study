@@ -44,3 +44,13 @@ window.addEventListener('scroll', _.throttle(function () {
 // 요소의 전/후상태를 중간 숫자의 값으로 자연스럽게 만들어 줄 수 있지만,
 // display 속성처럼 값이 숫자가 아닌 속성은 전/후 상태의 중간값이 존재하지 않기 때문에,
 // 자연스러운 전환 효과를 적용할 수 없다
+
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index) {
+  // gsap.to(요소, 지속시간, 옵션);
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7,  //0.7, 1.4, 2.1, 2.7 초뒤에 나올듯 4개니까
+    opacity: 1
+  });
+});
