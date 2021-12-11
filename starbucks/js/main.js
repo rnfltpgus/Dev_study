@@ -54,3 +54,10 @@ fadeEls.forEach(function (fadeEl, index) {
     opacity: 1
   });
 });
+
+// new Swiper(선택자, 옵션)
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical', //방향
+  autoplay: true, //자동재생여부
+  loop: true //반복재생여부
+});
