@@ -50,14 +50,33 @@ const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach(function (fadeEl, index) {
   // gsap.to(요소, 지속시간, 옵션);
   gsap.to(fadeEl, 1, {
-    delay: (index + 1) * .7,  //0.7, 1.4, 2.1, 2.7 초뒤에 나올듯 4개니까
+    delay: (index + 1) * .7,  // 0.7, 1.4, 2.1, 2.7 초뒤에 나올듯 4개니까
     opacity: 1
   });
 });
 
 // new Swiper(선택자, 옵션)
 new Swiper('.notice-line .swiper-container', {
-  direction: 'vertical', //방향
-  autoplay: true, //자동재생여부
-  loop: true //반복재생여부
+  direction: 'vertical', // 방향, 수직
+  autoplay: true, // 자동재생여부
+  loop: true // 반복재생여부
+});
+
+new Swiper('.promotion .swiper-container', {
+  // direction: 'horizontal' // 방향, 수평(horizontal) 하지만 swier에서 제공하는 기본값이 수평이라서 명시안해도됨
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  loop: true, // 반복재생여부
+  autoplay: {
+    delay: 5000
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true //사용자의 페이스 번호 요소 제어 가능 여부
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next'
+  }
 });
