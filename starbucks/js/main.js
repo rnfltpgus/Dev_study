@@ -73,13 +73,24 @@ new Swiper('.promotion .swiper-container', {
   },
   pagination: {
     el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
-    clickable: true //사용자의 페이스 번호 요소 제어 가능 여부
+    clickable: true // 사용자의 페이스 번호 요소 제어 가능 여부
   },
   navigation: {
     prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next'
   }
 });
+new Swiper('.awards .swiper-container', {
+  autoplay: true, // 자동재생
+  loop: true, // 반복재생
+  spaceBetween: 30, // 사이사이 여백
+  slidesPerView: 5, // 하나의 화면에 몇개의 슬라이드를 보여줄거인가?
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  } // 객체데이터 할당하기위에 넣음
+});
+
 
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
