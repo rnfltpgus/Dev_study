@@ -19,6 +19,7 @@ searchInputEl.addEventListener('blur', function () {
 
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function () {
   console.log(window.scrollY);
@@ -29,6 +30,10 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 0,
       display: 'none'
     });
+    //버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0
+    });
   } else {
     //배지 보이기
     // badgeEl.style.display - 'block';
@@ -36,8 +41,18 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 1,
       display: 'block'
     });
+    //버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x: 100
+    });
   }
 }, 300));
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  });
+});
 // _.throttle(함수, 시간)
 // gsap.to(요소, 지속시간, 옵션);
 // opacity 속성처럼 값을 숫자로 입력하는 속성들은 전환효과(transition 속성이나 GSAP 라이브러리 등)를 통해
@@ -140,3 +155,7 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
 });
+
+// 홈페이지 날자 갱신
+const thisYear = document.querySelector('.this-year');
+thisYear.textContent = new Date().getFullYear(); //2021
