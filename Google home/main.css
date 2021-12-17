@@ -1,0 +1,179 @@
+/* 공통요소 */
+body {
+  background-color: #1B2237;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px;
+}
+
+/* body 영역 */
+.sub-menu {
+  position: relative;
+  /* background-color: orange; */
+  width: 1100px;
+  height: 34px;
+  display: flex;
+}
+.sub-menu ul.menu {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+.sub-menu ul.menu-2 {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+.sub-menu ul.menu li {
+  background-color: red;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin-right: 5px;
+}
+.sub-menu ul.menu-2 li {
+  background-color: red;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin-left: 5px;
+}
+.sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #fff;
+}
+.sub-menu ul.menu-2 li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #fff;
+}
+.google {
+  /* background-color: blue; */
+  position: relative;
+  padding: 50px;
+}
+.google img {
+  display: block;
+  margin : 0 auto;
+}
+.search {
+  /* background-color: red; */
+  position: relative;
+  width: 580px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+input {
+  width: 550px;
+  height: 34px;
+  padding: 4px 10px;
+  border-color: #bbb;
+  border-radius: 15px;
+  outline: none;
+  border-width: 2px;
+  margin: auto 0;
+}
+.material-icons.md-1 {
+  position: absolute;
+  margin: auto;
+  top: 10px;
+  bottom: 10px;
+  height: 24px;
+  left: 12px;
+  z-index: 5;
+}
+.material-icons.md-2 {
+  cursor: pointer;
+  position: absolute;
+  margin: auto;
+  top: 10px;
+  bottom: 10px;
+  height: 24px;
+  right: 10px;
+}
+.material-icons.md-3 {
+  cursor: pointer;
+  position: absolute;
+  margin: auto;
+  top: 10px;
+  bottom: 10px;
+  height: 24px;
+  right: 40px;
+}
+.btn-group {
+  position: relative;
+  text-align: center;
+  top: 25px;
+}
+.btn-group .btn {
+  width: 130px;
+  padding: 8px 50px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  color: #fff;
+  background-color: royalblue;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: .4s;
+  margin-left: 5px;
+}
+.btn-group .btn:nth-child(0) {
+  display: none;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.last {
+  position: relative;
+  /* padding: 10px; */
+  margin: auto;
+  font-size: 15px;
+  text-align: center;
+  /* height: 100px; */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #fff;
+  /* display: flex; */
+  /* justify-self: center; */
+  /* align-items: center; */
+}
+.last .img {
+  /* height: 50px; */
+  /* position: absolute; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* margin: auto; */
+  display: block;
+  /* justify-self: center; */
+  /* align-items: center; */
+  /* padding: 10px; */
+  /* top: 5px; */
+}
