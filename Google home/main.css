@@ -140,10 +140,11 @@ input {
   /* box-sizing: border-box; */
   transition: .4s;
 }
-/* .btn-group .btn:last-child(0) {
+.btn-group .btn:last-child {
   margin-right: 0;
-} */
-.btn:hover {
+  /* 왜안없어지지? 물어봐야겠다 */
+}
+.btn-group .btn:hover {
   background-color: #333;
   color: #fff;
 }
