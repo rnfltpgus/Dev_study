@@ -142,11 +142,12 @@
 
 // -------- 3차 --------
 // 단어의 마지막 단어는 물어봐야될 듯
-var word = "dolphin";
-var sentence = "Where did Jane get the dolphin from, John?";
-console.log(sentence.length)
+// 포지션 값에 word의 순서를 적어주면 될줄알았는데 안됨
+// var word = "dolphin";
+// var sentence = "Where did Jane get the dolphin from, John?";
+// console.log(sentence.length)
 
-var indexOfD = sentence.indexOf(word);
-var indexOfN = sentence.indexOf(word.indexOf(word.length-1));
+// var indexOfD = sentence.indexOf(word);
+// var indexOfN = sentence.indexOf(word.indexOf(word.length-1));
 
-console.log(indexOfD, indexOfN);
+// console.log(indexOfD, indexOfN);
