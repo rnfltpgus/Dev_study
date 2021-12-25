@@ -1,0 +1,9 @@
+.view {
+  text-align: center;
+  padding-top: 300px;
+}
+#btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 30px 10px 30px;
+}
