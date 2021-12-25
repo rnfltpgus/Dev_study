@@ -225,3 +225,140 @@
 // const arr = [ foo(1), foo(2), foo(3) ];
 
 // console.log(arr); // 4,5,6
+
+
+
+// *********************************** Part 3 ************************************
+// ----------------------------------- 서울에서 김서방 찾기 -----------------------------------
+// 문제 설명
+// String형 배열 seoul의 element중 "Kim"의 위치 x를 찾아, "김서방은 x에 있다"는 String을 반환하는 함수, solution을 완성하세요.
+// seoul에 "Kim"은 오직 한 번만 나타나며 잘못된 값이 입력되는 경우는 없습니다.
+// 제한 사항
+// seoul은 길이 1 이상, 1000 이하인 배열입니다.
+// seoul의 원소는 길이 1 이상, 20 이하인 문자열입니다.
+// "Kim"은 반드시 seoul 안에 포함되어 있습니다.
+
+// -------- 1차 -------- : indexOf를 이용
+// function solution(seoul){
+//   var index = seoul.indexOf('Kim');
+//   return "김서방은 " + index + "에 있다";
+// }
+
+// console.log(findKim(["Jane", "Kim"]));
+
+// -------- 2차 -------- : 반복문을 이용
+// function solution(seoul) {
+//   var index = seoul.indexOf("Kim");
+//   for(var i = 0; i < seoul.length; i++) {
+//       if(seoul[i] == "kim") {
+//           var index = i;
+//       }
+//   }
+//   return "김서방은 " + index + "에 있다";
+// }
+
+
+// ----------------------------------- 가운데 글자 가져오기 -----------------------------------
+// -------- 1차 --------
+// function solution(s) {
+//   var answer = '';
+  
+//   if (s.length % 2 == 0) {
+//       answer = s[s.length/2 - 1] + s[s.length/2]};
+//   } else {
+//       answer = s[Math.floor(s.length/2)];
+//   }
+//   return answer;
+// };
+
+// -------- 2차 --------
+// function solution(s){
+//   let answer = [];
+//   if (s.length % 2 == 0) {
+//       answer = s.length / 2;
+//   }
+//   else {
+//     answer = s[Math.floor(s.length/2)];
+//   };
+//   return answer;
+// };
+
+// -------- 3차 -------- : 타인이한거
+// concat() : 메서드는 인자로 주어진 배열이나 값들을 기존 배열에 합쳐서 새 배열을 반환
+// function solution(s) {
+//   var answer = '';
+//   if(s.length % 2 === 0){
+//       answer = answer.concat(s[s.length/2 - 1]);
+//       answer = answer.concat(s[s.length/2]);
+//   }else{
+//       answer = answer.concat(s[Math.floor(s.length/2)]);
+//   }
+//   return answer;
+// }
+
+// -------- 4차 --------
+// function solution(s) {
+//   var answer = '';
+//   // 홀수일 때
+//   // 홀수를 2로 나눈 나머지는 항상 1
+//   // 홀수의 경우 소수점이 생기기때문에, Math 메서드로 제거한다.
+//   if (s.length % 2 === 1) {
+//       let num = Math.floor(s.length / 2);
+//       return s[num];
+//   }
+//   // 짝수일 때
+//   // 짝수를 2로 나눈 나머지는 항상 2
+//   // 짝수일때는 가운데 두 글자를 반환해야하기 때문에
+//   // 두 값을 반환해준다
+//   if (s.length % 2 === 0) {
+//       let num = s.length / 2;
+//       return s[num-1] + s[num];
+//   }
+// }
+//   return answer;
+
+// -------- 5차 -------- : 타인이한거
+// substr()은 문자열에서 특정 부분만 골라내는 메서드
+// substr(start, length) 의 형태로 사용하며, start는 시작 위치, length는 잘라낼 문자열의 길이를 나타냄
+// length를 지정하지 않으면 문자열의 끝까지 잘라내게 됨
+// 코드를 보면 substr 메서드의 첫 번째 매개변수에서 문자열 s의 길이를 2로 나눈 값을 소수점을 버리고 사용함
+// 두 번째 매개변수가 들어가는 부분에서, 삼항연산자를 사용하여 s.length를 2로 나눈 값의 나머지가 0이면(짝수) 2개의 문자열을 잘라내고, 아닐 경우(홀수)는 1개만 잘라냄
+// 삼항 조건 연산자
+// JavaScript에서 세 개의 피연산자를 취할 수 있는 유일한 연산자
+// 맨 앞에 조건문 들어가고. 그 뒤로 물음표(?)와 조건이 참truthy이라면 실행할 식이 물음표 뒤로 들어감
+// 바로 뒤로 콜론(:)이 들어가며 조건이 거짓falsy이라면 실행할 식이 마지막에 들어감(보통 if 명령문의 단축 형태로 쓰임)
+// condition ? exprIfTrue : exprIfFalse
+
+// function solution(s) {
+//   return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
+// }
+
+
+// ----------------------------------- 수박수박수박수 -----------------------------------
+// -------- 1차 --------
+// function solution(n) {
+//   var answer = '';
+//   for(var i = 1; i <= n; i++) {
+//       if(i % 2 === 0) {
+//           answer += "박"
+//       } else {
+//           answer += "수"
+//       }
+//   }
+//   return answer;
+// }
+
+// -------- 2차 -------- : 삼항 조건 연산자를 이용
+// function solution(n){
+//   var result = "";
+//     for(var i = 0 ; i < n ; i++) {
+//         result += i % 2 == 0 ? "수" : "박";
+//   }
+//   return result;
+// }
+
+// -------- 3차 -------- : 다른사람꺼인데 간략화하는 방법을 배워야할 듯
+// function solution(n) {
+//   return "수박".repeat(n).substring(0,n)
+// }
+
