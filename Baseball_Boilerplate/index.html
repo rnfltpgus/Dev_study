@@ -13,8 +13,8 @@
     />
     <link rel="icon" href="/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script defer href="./index.js"></script>
     <title>Baseball Project</title>
+    <script defer src="./index.js"></script>
   </head>
 
   <body>
@@ -22,13 +22,37 @@
       <div class="image-box">
         <img src="images/vanilla_coding_logo.png" />
       </div>
+
+      <div class="rago">
+        <h1>Numver Baseball Game</h1>
+        <span class="rago_span">0 ~ 9까지 서로 다른 숫자를 적어주세요.</span>
+      </div>
       <!-- 야구게임 Start -->
 
+      <!-- html 표준규격에는 좀더 맞게 구현하려면 인풋, 버튼 달인 인풋은 from으로 감싸주는 것이 맞는 표현 -->
       <form id="form">
-        <input type="text" id='input'>
-        <button>확인</button>
+        <input type="number" id='input' placeholder="네자리 숫자를 입력해주세요.">
+        <button>Go</button>
       </form>
       <div id="logs"></div>
+      <div class="popUp">
+        <div>
+          <div class="playTxt">10회 초과! Game Over!</div><br>
+          <span class="restate" id="restate_text">replay? Lagogo!!</span>
+        </div>
+      </div>
+      <div class="popUp_out">
+        <div>
+          <div class="playTxt">3진 아웃!! Game Over!</div><br>
+          <span class="restate_out" id="restate_text_out">replay? Lagogo!!</span>
+        </div>
+      </div>
+      <div class="popUp_sc">
+        <div>
+          <div class="playTxt">Homer Run!! 축축!</div><br>
+          <span class="restate_sc" id="restate_text_sc">replay? Lagogo!!</span>
+        </div>
+      </div>
 
       <!-- 야구게임 End -->
 
@@ -38,33 +62,39 @@
 
 
 
+<!-- 게임 시작 버튼 만들기
+게임 시작 버튼을 클릭 했을때, 랜덤한 세 자리 숫자 만들기 (사용자에게 보여주진 않습니다.)
+숫자 입력칸 만들기
+사용자가 엔터키를 클릭 했을때, 입력값이 세자리 숫자가 아닌 경우 경고창 띄워주기
+사용자가 엔터키를 클릭 했을때, 2단계에서 생성한 숫자와 사용자의 입력값 비교하기
+각 자리 별로 비교하고, 같은 자리에 같은 숫자가 몇개 있는지 판별합니다. (스트라이크 갯수)
+각 자리 별로 비교하고, 다른 자리에 같은 숫자가 몇개 있는지 판별합니다. (볼 갯수)
+화면에 스트라이크와 볼의 갯수를 표기합니다.
+사용자가 10회까지 시도할 수 있도록 제한합니다.
+게임 재시작 버튼을 만들고, 재시작 할 수 있도록 합니다. -->
 
 
 
+<!-- 위에 다시 작성 중 -->
+<!-- <div class="rago">
+  <h1>Numver Baseball Game</h1>
+  <span>0 ~ 9까지 서로 다른 숫자를 적어주세요.</span>
+  <input class="starts" id="gamestart" type="button" value="게임시작" onclick="startin()">
+  <input class="restartb" id="gamerestart" value="재시작" type="button" onclick="restart()">
 
-
-
-
-      <!-- 위에 다시 작성 중 -->
-      <!-- <div class="rago">
-        <h1>Numver Baseball Game</h1>
-        <span>0 ~ 9까지 서로 다른 숫자를 적어주세요.</span>
-        <input class="starts" id="gamestart" type="button" value="게임시작" onclick="startin()">
-        <input class="restartb" id="gamerestart" value="재시작" type="button" onclick="restart()">
-
-        <div class="rago_number">
-          <input class="input" id="numbering" type="number" placeholder="세자리 숫자를 입력해주세요.">
-          <input class="btn" id="submit-btn" type="submit" style="visibility: visible;" onclick="getno()">
-        </div>
-      </div>
-      <div class="info">
-        <span id="s">스트라이크:0</span><br>
-        <span id="b">볼:0</span><br>
-        <span id="g">남은 기회:10</span><br>
-      </div>
-      <div class="popUp">
-        <div>
-          <span class="material-icons replayIcon">replay_circle_filled</span>
-          <div class="playTxt">다시하기</div>
-        </div>
-      </div> -->
+  <div class="rago_number">
+    <input class="input" id="numbering" type="number" placeholder="세자리 숫자를 입력해주세요.">
+    <input class="btn" id="submit-btn" type="submit" style="visibility: visible;" onclick="getno()">
+  </div>
+</div>
+<div class="info">
+  <span id="s">스트라이크:0</span><br>
+  <span id="b">볼:0</span><br>
+  <span id="g">남은 기회:10</span><br>
+</div>
+<div class="popUp">
+  <div>
+    <span class="material-icons replayIcon">replay_circle_filled</span>
+    <div class="playTxt">다시하기</div>
+  </div>
+</div> -->
