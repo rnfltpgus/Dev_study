@@ -4,9 +4,126 @@ body {
   background-size: cover;
   font-family: "Varela Round", sans-serif;
 }
-
 h1 {
   font-family: "Pacifico", cursive;
   text-align: center;
-  font-size: 72px;
+  font-size: 45px;
+}
+.rago {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+.rago .rago_span {
+  font-size: 20px;;
+  font-weight: bold;
+}
+#form {
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+#form input {
+  width: 247px;
+  border-radius: 5px;
+  padding: 10px;
+}
+#form button {
+  border-radius: 5px;
+  padding: 10px;
+}
+#logs {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  margin: auto;
+  background-color: #3f3f3f;
+  color: #fff;
+  opacity: 0.5;
+  width: 316px;
+  border-radius: 5px;
+}
+.popUp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #124e86;
+  color:#fff;
+  opacity: 0.9;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  font-size: 20px;
+  text-align: center;
+}
+.popUp .restate {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.popUp .restate:hover {
+  font-size: 40px;
+  color: deeppink;
+  transform: .1;
+}
+.popUp_out {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #124e86;
+  color:#fff;
+  opacity: 0.9;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  font-size: 20px;
+  text-align: center;
+}
+.popUp_out .restate_out {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.popUp_out .restate_out:hover {
+  font-size: 40px;
+  color: deeppink;
+  transform: .1;
+}
+.popUp_sc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #1d96db;
+  color:#fff;
+  opacity: 0.9;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 300px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  font-size: 20px;
+  text-align: center;
+}
+.popUp_sc .restate_sc {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.popUp_sc .restate_sc:hover {
+  font-size: 40px;
+  color: rgb(240, 3, 3);
+  transform: .1;
 }
