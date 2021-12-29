@@ -1,0 +1,56 @@
+body {
+  background-image: url("./images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Varela Round", sans-serif;
+}
+h1 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 72px;
+}
+.image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.image-box img {
+  width: 200px;
+}
+.calendar {
+  width: 300px;
+  height: 320px;
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+}
+.upper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 300px;
+  height: 100px;
+  background-color: #042404;
+}
+#month {
+  font-size: 70px;
+  font-weight: 900;
+  color: #ffffff;
+}
+.lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  font-size: 16px;
+}
+#date {
+  margin-bottom: 5px;
+  font-size: 130px;
+  font-weight: 900;
+  line-height: 1;
+  color: #333333;
+}
