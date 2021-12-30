@@ -4,12 +4,17 @@ body {
   background-size: cover;
   font-family: "Varela Round", sans-serif;
 }
-
 h1 {
   font-family: "Pacifico", cursive;
   text-align: center;
   font-size: 72px;
   margin: 50px;
+}
+.image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 .promotion {
   height: 650px;
