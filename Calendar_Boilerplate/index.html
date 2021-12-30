@@ -14,6 +14,7 @@
     <link rel="icon" href="/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Calendar Project</title>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script defer src="index.js"></script>
   </head>
   <body>
@@ -24,15 +25,40 @@
       <h1>Calendar</h1>
 
       <!-- 달력 Start -->
-
-      <div class="calendel">
+      <!-- 항상 어떻게 뼈를 구성하고 시작할껀지 생각하고 하잡! -->
+      <!-- 실시간 날짜 시간 -->
+      <div class="calendar_sp">
         <div class="upper">
-          <div id="month"></div>
+          <div id="month_sp"></div>
         </div>
         <div class="lower">
-          <div id="day"></div>
-          <div id="date"></div>
-          <div id="year"></div>
+          <div id="day_sp"></div>
+          <div id="date_sp"></div>
+          <div id="year_sp"></div>
+        </div>
+        <div class="tictic"></div>
+      </div>
+
+      <!-- 캘린더 -->
+      <div class="calendar" >
+        <div class="sec_cal">
+          <div class="cal_nav">
+            <a href="javascript:;" class="nav-btn go-prev">prev</a>
+            <div class="year-month"></div>
+            <a href="javascript:;" class="nav-btn go-next">next</a>
+          </div>
+        <div class="cal_wrap">
+          <div class="days">
+            <div class="day">SUN</div>
+            <div class="day">MON</div>
+            <div class="day">TUE</div>
+            <div class="day">WED</div>
+            <div class="day">THU</div>
+            <div class="day">FRI</div>
+            <div class="day">SAT</div>
+          </div>
+          <div class="dates"></div>
+        </div>
         </div>
       </div>
 
@@ -41,3 +67,60 @@
     </section>
   </body>
 </html>
+
+
+
+<!-- 내 생각은 주석사이사이에 넣었음 -->
+
+<!-- 바코 문제 -->
+<!-- 오늘의 현재 요일 표기
+오늘의 현재 날짜 표기
+오늘의 현재 월 표기
+오늘의 현재 연도 표기
+일,월,화,수,목,금,토 요일 라벨링 표기
+현재 월의 1일이 무슨 요일인지 판별하고, 해당 요일 라벨링에 1일 표기하기
+현재 월의 마지막 날짜까지 달력에 표기하기
+우측 화살표를 클릭 했을때, 다음 달의 요일 및 날짜 표기
+좌측 화살표를 클릭 했을때, 이전 달의 요일 및 날짜 표기
+특정 날짜를 클릭 했을때, 상단의 요일 및 날짜 반영하기 -->
+
+
+<!-- -------------------------------- 이전 소스 -------------------------------- -->
+
+      <!-- 캘린더 -->
+      <!-- <div class="calendar">
+        <div class="header">
+          <div class="year-month"></div>
+          <div class="nav"> -->
+            <!-- 아래의 &lt;와 &gt;는 HTML에서 < 와 > 기호를 넣는 방법이라 페캠강의 때 보았어서 사용해봄 -->
+            <!-- <button class="nav-btn go-prev">&lt;</button>
+            <button class="nav-btn go-today">Today</button>
+            <button class="nav-btn go-next">&gt;</button>
+          </div>
+        </div>
+        <div class="main">
+          <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+          </div>
+          <div class="dates"></div>
+        </div>
+        <div class="main">
+          <div class="days" id="calendel">
+            <tr>
+              <td>일</td>
+              <td>월</td>
+              <td>화</td>
+              <td>수</td>
+              <td>목</td>
+              <td>금</td>
+              <td>토</td>
+            </tr>
+          </div>
+        </div>
+      </div> -->
