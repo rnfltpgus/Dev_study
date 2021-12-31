@@ -48,6 +48,7 @@ var yearMonth = new Date(todayTime.getFullYear(), todayTime.getMonth(), todayTim
 renderCalender(yearMonth);
 
 function renderCalender(yearMonth) {
+  console.log(yearMonth);
   // 위의 것과 다르게 생각대로 만들어지지 않아서 개발자 친구에게 조언을 구해보았음
   // "1. 간략화된 달력 만들기"에서 선언한 now를 사용하여 달력 상단에 표기할 년도,월,일의 정보를 표현해줌
   const viewYear = now.getFullYear(); // 년
@@ -74,11 +75,11 @@ function renderCalender(yearMonth) {
   calendar.innerHTML = '';
 
   // 지난달
-  for (var i = prevDate - prevDay + 1; i <= prevDate; i++) {
+  for (var i = prevDate - prevDay; i <= prevDate; i++) { // +1 뺐음 날자가 안맞아서
     calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>'
   }
   // 이번달
-  for (var i = 1; i <= theDate; i++) {
+  for (var i = 1; i <= theDate - 1; i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day current">' + i + '</div>'
   }
   // 다음달
@@ -93,21 +94,44 @@ function renderCalender(yearMonth) {
     viewMonthDate[todayTimeDate -1].classList.add('todayTime');
   }
 }
-// 이전달로 이동
-$('.go-prev').on('click', function() {
-yearMonth = new Date(viewYear, viewMonth - 1, 1);
-renderCalender(yearMonth);
+
+// 전환버튼 넣어주기
+// 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
+// 일단 안되네 ㅎㅎ 화난다
+const prevButton = document.querySelector('.go-prev');
+const nextButton = document.querySelector('.go-next');
+
+prevButton.addEvenListener('click', function () {
+  var yearMonth = new Date(viewYear, viewMonth - 1, 1)
+  renderCalender(yearMonth)
 });
 
-// 다음달로 이동
-$('.go-next').on('click', function() {
-yearMonth = new Date(viewYear, viewMonth + 1, 1);
-renderCalender(yearMonth);
+nextButton.addEvenListener('click', function () {
+  var yearMonth = new Date(viewYear, viewMonth + 1, 1)
+  renderCalender(yearMonth)
 });
 
 
 
-// -------------------------------- 이전 소스(남거 참고용_2) --------------------------------
+
+// -------------------------------- 이전 소스(남이 만든 달력이동 + 내꺼 정보 넣어보기 참고용_3) --------------------------------
+// 재이커리?는 내가 배운적이 없지만 선언방식 차이 인걸 확인함
+
+// // 이전달로 이동
+// $('.go-prev').on('click', function() {
+// yearMonth = new Date(viewYear, viewMonth - 1, 1);
+// renderCalender(yearMonth);
+// });
+
+// // 다음달로 이동
+// $('.go-next').on('click', function() {
+// yearMonth = new Date(viewYear, viewMonth + 1, 1);
+// renderCalender(yearMonth);
+// });
+
+
+
+// -------------------------------- 이전 소스(남거 + 내꺼 같이 사용 해봄 참고용_2) --------------------------------
 // const last = [31,28,31,31,30,31,30,31,31,30,31,30,31] //각 달의 마지막 일을 배열
 
 // // 4년마다 윤달이 있으니까 체크
@@ -154,7 +178,7 @@ renderCalender(yearMonth);
 
 
 
-// -------------------------------- 이전 소스(남거 참고용_1) --------------------------------
+// -------------------------------- 이전 소스(남거 참고용_1 내 생각도 들어감) --------------------------------
 
 // var $calendelBody = document.querySelector('#calendelBody')
 // $calendelBody.append(calendel);
