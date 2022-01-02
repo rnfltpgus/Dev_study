@@ -38,11 +38,11 @@ function comeon(){
 }
 comeon();
 
-var kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
-var todayTime = new Date(kstGap); // 한국 시간으로 date 객체 만들기(오늘)
+let kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
+let todayTime = new Date(kstGap); // 한국 시간으로 date 객체 만들기(오늘)
 
 // 달력에서 표기하는 날자 객체
-var yearMonth = new Date(todayTime.getFullYear(), todayTime.getMonth(), todayTime.getDate());
+let yearMonth = new Date(todayTime.getFullYear(), todayTime.getMonth(), todayTime.getDate());
 
 // 3. 켈린더 만들기
 renderCalender(yearMonth);
@@ -75,51 +75,49 @@ function renderCalender(yearMonth) {
   calendar.innerHTML = '';
 
   // 지난달
-  for (var i = prevDate - prevDay; i <= prevDate; i++) {
+  for (let i = prevDate - prevDay; i <= prevDate; i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>'
   }
   // 이번달
-  for (var i = 1; i <= theDate; i++) {
+  for (let i = 1; i <= theDate; i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day current">' + i + '</div>'
   }
   // 다음달
-  for (var i = 1; i <= (7 - theDay == 7 ? 0 : 7 - theDay - 1); i++) {
+  for (let i = 1; i <= (7 - theDay == 7 ? 0 : 7 - theDay - 1); i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
   }
 
-  // 오늘 날짜 표기
+  // 달력안에 오늘 날짜 색깔 표기
   if (todayTime.getMonth() == viewMonth) {
     todayTimeDate = todayTime.getDate();
-    var viewMonthDate = document.querySelectorAll('.dates .current');
+    let viewMonthDate = document.querySelectorAll('.dates .current');
     viewMonthDate[todayTimeDate -1].classList.add('todayTime');
   }
+  // // 전환버튼 넣어주기
+  // // 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
+  // // 일단 안되네 ㅎㅎ 화난다 > 일단 강의 처음부터 다시 듣고와야겠음 그리고 다시
+  const prevButton = document.querySelector('.go-prev');
+  const nextButton = document.querySelector('.go-next');
+
+  prevButton.addEventListener('click', function () {
+    // rederCalender(yearMonth.remove());
+    // prevButton = document.querySelector('.day prev disable');
+    // prevButton();
+    let yearMonth = new Date(viewYear, viewMonth - 1, 1);
+    // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
+    renderCalender(yearMonth);
+  });
+
+  nextButton.addEventListener('click', function () {
+    // rederCalender(yearMonth.remove());
+    // nextButton = document.querySelector('.day next disable');
+    // nextButton();
+    let yearMonth = new Date(viewYear, viewMonth + 1, 1);
+    // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
+    renderCalender(yearMonth);
+  });
 }
 
-// // 전환버튼 넣어주기
-// // 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
-// // 일단 안되네 ㅎㅎ 화난다 > 일단 강의 처음부터 다시 듣고와야겠음 그리고 다시
-const prevButton = document.querySelector('.nav-btn go-prev');
-const nextButton = document.querySelector('.nav-btn go-next');
-
-prevButton.addEventListener('click', function () {
-  removeCalendar();
-  // rederCalender(yearMonth.remove());
-  // prevButton = document.querySelector('.day prev disable');
-  // prevButton();
-  const yearMonth = new Date(viewYear, viewMonth - 1, 1);
-  // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
-  renderCalender(yearMonth);
-});
-
-nextButton.addEvenListener('click', function () {
-  removeCalendar();
-  // rederCalender(yearMonth.remove());
-  // nextButton = document.querySelector('.day next disable');
-  // nextButton();
-  const yearMonth = new Date(viewYear, viewMonth + 1, 1);
-  // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
-  renderCalender(yearMonth);
-});
 
 // const goPrev = function () {
 //   yearMonth = new Date(viewYear, viewMonth - 1, 1);
@@ -161,15 +159,15 @@ nextButton.addEvenListener('click', function () {
 // }
 
 // // 현재 달의 마지막 일
-// var lastDate = last[viewMonth];
+// let lastDate = last[viewMonth];
 
 // // 달력에 필요한 행의 개수 만든다
 // // theDay(빈 칸의수), lastDate(월의 전체 일수)
 // const row = Math.ceil((theDay + lastDate)/7);
 
 // // 그리고 우선 캘린터에 표기되는 일의 값을 아래처럼 작성하여 초기화
-// var calendel = "";
-// var viewDayNum = 1;
+// let calendel = "";
+// let viewDayNum = 1;
 
 // for (let i=1; i<=row; i++){ // 행 만들기
 //   calendel += "<tr>";
@@ -199,7 +197,7 @@ nextButton.addEvenListener('click', function () {
 
 // -------------------------------- 이전 소스(남거 참고용_1 내 생각도 들어감) --------------------------------
 
-// var $calendelBody = document.querySelector('#calendelBody')
+// let $calendelBody = document.querySelector('#calendelBody')
 // $calendelBody.append(calendel);
 // $calendelBody.append(document.write(calendel));
 
