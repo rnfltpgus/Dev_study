@@ -8,7 +8,7 @@ window.onload = function () {
   alert('I\'m loaded');
 };
 ```
-
+---
 ## 자주쓰는 이벤트 목록
 플래그(옵션) | 설명
 -- | --
@@ -28,15 +28,15 @@ onreset | Reset 버튼을 눌렀을 때
 onresize | 객체의 크기가 바뀌었을 때
 onscroll | 스크롤바를 조작할 때
 onsubmit | 폼이 전송될 때
-
+---
 # 2. Promise와 async/await 차이점 (이벤트리스너 오류로 검색해보니 비동기 처리에 대해서 알아야 된다고하여 적어둠 - 출처:필영)
 - 자바스크립트에서는 비동기 처리를 다룰 수 있는 방법에는 여러가지가 있다.
 - 주로 `callback`, `Promise`, `async/await` 를 활용함
-
+---
 ## Promise
 - `Promise`는 자바스크립트에서 비동기 처리에 사용되는 객체
 - 내용은 실행 되었지만 결과를 아직 반환하지 않은 객체라고 이해해도 좋음
-
+---
 ## 3가지 상태
 상태 | 설명
 -- | --
@@ -67,7 +67,7 @@ promise
 - 값이 참이면 `resove`를 호출하고, 아닐시에는 `reject`를 호출한다.
 - `resolve` 한 반환 값에 대해서는 `then()`을 통해 결과 값을 반환 받을 수 있고 `reject`의 반환 값에 대해서는 `catch()₩를 통해 반환 받는다.
 - `then()` 과 `catch()` 문의 체이닝을 통해 비동기 로직의 성공 여부에 따른 분기 처리가 가능하다.
-
+---
 ## asyne / await
 - 가장 최근의 나온 비동기 처리 문법으로 기존 `callback`이나 `Promise`의 단점을 해소하고자 만들어짐
 - `callback`이나 `Promise`의 경우에 단점은 꼬리에 꼬리를 무는 코드가 나올 수도 있다는 부분이다.
@@ -78,7 +78,7 @@ const variable =  await promise;
 // promise의 반환 값을 받아 variable
 ```
 - 하지만 `async/await`를 사용하기 위해서는 선행되어야 하는 조건이 있는데, `await`는 `async`함수안에서만 동작함
-
+---
 ## async / await 사용에시
 ```js
 (async () => {
@@ -103,7 +103,7 @@ const variable =  await promise;
 - `async` 함수 내의 `await` 를 통해 `Promise` 의 반환 값을 `result`변수에 담아 콘솔에 출력하는 코드
 - 그리고 주의할 점은 `async/await` 은 `Promise` 와는 다르게 에러를 핸들링 할 수 있는 기능이 없다.
 - 따라서 `try-catch()` 문을 활용하여 에러를 핸들링 하여 주어야 한다.
-
+___
 ## 차이점
 - 에러 핸들링
 1. `Promise` 를 활용할 시에는 `.catch()` 문을 통해 에러 핸들링이 가능하지만,
@@ -112,3 +112,14 @@ const variable =  await promise;
 1. `Promise의 .then()` 지옥의 가능성 (코드가 길어지면 길어질수록)
 2. `async/await`를 활용한 코드가 가독성이 좋다.
 3. `async/await`은 비동기 코드가 동기 코드처럼 읽히게 해준다.(코드 흐름을 이해 하기 쉬움)
+---
+# 3. innerText와 innerHTML의 차이점
+- innerText와 innerHTML은 단순한 텍스트만 다룰 경우에는 차이가 없어보임
+- 두 속성은 다루는 값이 text element인지, html element인지에 따라 차이가 남
+---
+## 값 가져오기, 설정하기
+
+속성 | 값 가져올 경우 | 값 설정할 경우
+-- | -- | --
+element.innerText | element 안의 text 값들만을 가져옴 | `element.innerText = "<div style='color:red'>A</div>";` / 옆에와 같이 속성에 html을 포함한 문자열을 입력하면, html 코드가 문자열 그대로 element안에 포함 됨
+element.innerHTML | element 안의 HTML이나 XML을 가져옴 | `element.innerText = "<div style='color:red'>A</div>";` / 옆에와 같이 속성에 html를 입력하면, html element가 element안에 포함되게 됨
