@@ -75,15 +75,15 @@ function renderCalender(yearMonth) {
   calendar.innerHTML = '';
 
   // 지난달
-  for (var i = prevDate - prevDay; i <= prevDate; i++) { // +1 뺐음 날자가 안맞아서
+  for (var i = prevDate - prevDay; i <= prevDate; i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day prev disable">' + i + '</div>'
   }
   // 이번달
-  for (var i = 1; i <= theDate - 1; i++) {
+  for (var i = 1; i <= theDate; i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day current">' + i + '</div>'
   }
   // 다음달
-  for (var i = 1; i <= (7 - theDay == 7 ? 0 : 7 - theDay); i++) {
+  for (var i = 1; i <= (7 - theDay == 7 ? 0 : 7 - theDay - 1); i++) {
     calendar.innerHTML = calendar.innerHTML + '<div class="day next disable">' + i + '</div>'
   }
 
@@ -95,22 +95,41 @@ function renderCalender(yearMonth) {
   }
 }
 
-// 전환버튼 넣어주기
-// 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
-// 일단 안되네 ㅎㅎ 화난다
-const prevButton = document.querySelector('.go-prev');
-const nextButton = document.querySelector('.go-next');
+// // 전환버튼 넣어주기
+// // 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
+// // 일단 안되네 ㅎㅎ 화난다 > 일단 강의 처음부터 다시 듣고와야겠음 그리고 다시
+const prevButton = document.querySelector('.nav-btn go-prev');
+const nextButton = document.querySelector('.nav-btn go-next');
 
-prevButton.addEvenListener('click', function () {
-  var yearMonth = new Date(viewYear, viewMonth - 1, 1)
-  renderCalender(yearMonth)
+prevButton.addEventListener('click', function () {
+  removeCalendar();
+  // rederCalender(yearMonth.remove());
+  // prevButton = document.querySelector('.day prev disable');
+  // prevButton();
+  const yearMonth = new Date(viewYear, viewMonth - 1, 1);
+  // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
+  renderCalender(yearMonth);
 });
 
 nextButton.addEvenListener('click', function () {
-  var yearMonth = new Date(viewYear, viewMonth + 1, 1)
-  renderCalender(yearMonth)
+  removeCalendar();
+  // rederCalender(yearMonth.remove());
+  // nextButton = document.querySelector('.day next disable');
+  // nextButton();
+  const yearMonth = new Date(viewYear, viewMonth + 1, 1);
+  // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
+  renderCalender(yearMonth);
 });
 
+// const goPrev = function () {
+//   yearMonth = new Date(viewYear, viewMonth - 1, 1);
+//   return renderCalender();
+// };
+
+// const goNext = function () {
+//   yearMonth = new Date(viewYear, viewMonth + 1, 1);
+//   return renderCalender();
+// };
 
 
 
