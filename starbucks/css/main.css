@@ -772,6 +772,7 @@ header .badges .badge {
 .awards .swiper-container {
   width: 100%;
   height: 40px;
+  overflow: hidden;
 }
 .awards .swiper-prev,
 .awards .swiper-next {
