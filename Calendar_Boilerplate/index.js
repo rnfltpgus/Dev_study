@@ -24,36 +24,45 @@ for (let key in today) {
 const $tictic = document.querySelector('.tictic');
 
 function getTime(){
-    const time = new Date();
-    const hour = time.getHours();
-    const minutes = time.getMinutes();
-    const seconds = time.getSeconds();
-    // clock.innerHTML = hour +":" + minutes + ":"+seconds;
-    // 위의 내용으로 구현할 경우 00:0:0의 식으로 출력된다 그래서 아래와 같이 삼항연산자와 백틱을 이용하여 변경시킴
-    $tictic.innerHTML = `${hour < 10 ? `0${hour}`:hour}:${minutes < 10 ? `0${minutes}`:minutes}:${seconds < 10 ? `0${seconds}`:seconds}`
+  const time = new Date();
+  const hour = time.getHours();
+  const minutes = time.getMinutes();
+  const seconds = time.getSeconds();
+  // clock.innerHTML = hour +":" + minutes + ":"+seconds;
+  // 위의 내용으로 구현할 경우 00:0:0의 식으로 출력된다 그래서 아래와 같이 삼항연산자와 백틱을 이용하여 변경시킴
+  $tictic.innerHTML = `${hour < 10 ? `0${hour}`:hour}:${minutes < 10 ? `0${minutes}`:minutes}:${seconds < 10 ? `0${seconds}`:seconds}`
 }
 
 function comeon(){
-    setInterval(getTime, 1000); // setInterval(실행함수, 몇초간격?(1초=1000밀리초))
+  setInterval(getTime, 1000); // setInterval(실행함수, 몇초간격?(1초=1000밀리초))
 }
 comeon();
 
-let kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
-let todayTime = new Date(kstGap); // 한국 시간으로 date 객체 만들기(오늘)
+// 현재 컴퓨터 기준으로 시간을 셋팅할 수 있기 때문에 굳이 따로 코드를 작성할 필요가 없음
+// let kstGap = 9 * 60 * 60 * 1000; // 한국 kst 기준시간 더하기
+// let todayTime = new Date(kstGap); // 한국 시간으로 date 객체 만들기(오늘)
+
+// // 달력에서 표기하는 날자 객체
+// let yearMonth = new Date(todayTime.getFullYear(), todayTime.getMonth(), todayTime.getDate());
+
+let todayTime = new Date(); // 한국 시간으로 date 객체 만들기(오늘)
+// console.log("today : " + todayTime)
 
 // 달력에서 표기하는 날자 객체
 let yearMonth = new Date(todayTime.getFullYear(), todayTime.getMonth(), todayTime.getDate());
+// console.log("yearmonth : " + yearMonth)
+
 
 // 3. 켈린더 만들기
-renderCalender(yearMonth);
 
-function renderCalender(yearMonth) {
-  console.log(yearMonth);
+renderCalender(yearMonth)
+function renderCalender(date) {
+  console.log(date);
   // 위의 것과 다르게 생각대로 만들어지지 않아서 개발자 친구에게 조언을 구해보았음
   // "1. 간략화된 달력 만들기"에서 선언한 now를 사용하여 달력 상단에 표기할 년도,월,일의 정보를 표현해줌
-  const viewYear = now.getFullYear(); // 년
-  const viewMonth = now.getMonth(); // 월
-  const viewDate = now.getDate(); // 일
+  const viewYear = date.getFullYear(); // 년
+  const viewMonth = date.getMonth(); // 월
+  const viewDate = date.getDate(); // 일 - 사용하지 않음 없어도 되긴함
 
   // 현재 년월 표기를 넣어줌
   document.querySelector('.year-month').textContent = `${viewYear}th ${viewMonth + 1}`;
@@ -93,30 +102,32 @@ function renderCalender(yearMonth) {
     let viewMonthDate = document.querySelectorAll('.dates .current');
     viewMonthDate[todayTimeDate -1].classList.add('todayTime');
   }
-  // // 전환버튼 넣어주기
-  // // 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
-  // // 일단 안되네 ㅎㅎ 화난다 > 일단 강의 처음부터 다시 듣고와야겠음 그리고 다시
-  const prevButton = document.querySelector('.go-prev');
-  const nextButton = document.querySelector('.go-next');
-
-  prevButton.addEventListener('click', function () {
-    // rederCalender(yearMonth.remove());
-    // prevButton = document.querySelector('.day prev disable');
-    // prevButton();
-    let yearMonth = new Date(viewYear, viewMonth - 1, 1);
-    // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
-    renderCalender(yearMonth);
-  });
-
-  nextButton.addEventListener('click', function () {
-    // rederCalender(yearMonth.remove());
-    // nextButton = document.querySelector('.day next disable');
-    // nextButton();
-    let yearMonth = new Date(viewYear, viewMonth + 1, 1);
-    // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
-    renderCalender(yearMonth);
-  });
 }
+// 전환버튼 넣어주기
+// 공부했던 에드이벤트리스너 클릭으로 해결해보려고 함
+// 일단 안되네 ㅎㅎ 화난다 > 일단 강의 처음부터 다시 듣고와야겠음 그리고 다시
+const prevButton = document.querySelector('.go-prev');
+const nextButton = document.querySelector('.go-next');
+
+prevButton.addEventListener('click', function () {
+  // rederCalender(yearMonth.remove());
+  // prevButton = document.querySelector('.day prev disable');
+  // prevButton();
+  yearMonth.setMonth(yearMonth.getMonth()-1);
+  // console.log("prev yearmonth : " + yearMonth);
+  // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
+  renderCalender(yearMonth);
+});
+
+nextButton.addEventListener('click', function () {
+  // rederCalender(yearMonth.remove());
+  // nextButton = document.querySelector('.day next disable');
+  // nextButton();
+  yearMonth.setMonth(yearMonth.getMonth()+1) // .setMont : 현재 설정된 연도에 따라 지정된 날짜의 월을 설정
+  // console.log("next yearmonth : " + yearMonth);
+  // calendar.innerHTML = calendar.innerHTML(renderCalender(yearMonth));
+  renderCalender(yearMonth);
+});
 
 
 // const goPrev = function () {
