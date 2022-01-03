@@ -16,15 +16,19 @@
 - 10회 입력을 진행하여도 아웃으로 게임룰을 원칙으로 함
 ![Baseball_Boilerplate](https://user-images.githubusercontent.com/80088956/147932802-d5637fe0-efa1-4597-bb2d-74c60a131dff.png)
 
+
 # 3. Basic
 - `html, css, js 등` Basic 학습 내용(주석으로 정리함)
+
 
 # 4. Calendar_Boilerplate
 - 전반적으로 바닐라코딩에서 정의한 기능을 대상으로 구현하였음
 - 구현하면서 학습이 필요한 부분은 README.md으로 정리(event listener, callback, 비동기 처리, innerText와 innerHTML의 차이점 등)
 - `new Date()`를 활용한 구현
 - 간략화 실시간 달력 및 시간, 캘린더로 구성
-- 주석 등 코드정리는 아직 진행하지 못함
+- 주석 등 코드정리는 아직 진행하지 못함(신청 끝나고 정리)
+- ![Calendar_Boilerplate](https://user-images.githubusercontent.com/80088956/147934726-15ac3898-eb69-47af-a949-00625c3fc7bf.png)
+
 
 # 5. Carousel_Boilerplate
 - 케로줼? 슬라이더 구현
@@ -33,21 +37,48 @@
 
 
 # 6. Dispatch_reminiscence
+- egoing 강의
+- 회사 파견지 짜투리 학습 및 일기(오글)
+
 
 # 7. Google home
+- 구글 홈페이지 만들기
+- 바닐라 코딩 선행학습, 퀴즈 풀이
+![Google home](https://user-images.githubusercontent.com/80088956/147935403-d13c8f99-8af1-46f6-8e44-79e5260878d5.png)
+
 
 # 8. JavaScript_Essentials
+- Node.js, nvm, npm 학습
+- javascript 기본문법 정리 및 함수 클래스 학습
+
 
 # 9. JavaScript
+- javascript 간략화 선행학습
+
 
 # 10. TypeScript Essentials
+- 학습 진행중
+- TypeScript 강의 정리
+
 
 # 11. Overwatch
+- 게임 선택창 만들기 (html, css)
+![overwatch](https://user-images.githubusercontent.com/80088956/147936032-34ac592f-b030-4b6b-b8e8-d87774d69b6f.png)
+
 
 # 12. Python_study
+- 입문자를 위한 파이썬 기초 따라잡기 : 보안프로젝트
+- 학습내용 정리한 것이 날라가 일부만 올림
 
 # 13. regexp 
+- 자바스크립트 정규표현식 학습 내용 정리
+
 
 # 14. starbucks
+- 스타벅스 클론코딩
+- `html, css, js, api` 등 활용
+
 
 # 15. test.md
+- 마크다운 용어 정리 내용 참고하려고 퍼옴
+
