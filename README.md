@@ -10,6 +10,11 @@
 
 
 # 2. Baseball_Boilerplate
+- 숫자야구 : 임의의 3~4자리 숫자(해당 게임은 4자리로 만듬)를 임의로 정한 뒤, 입력창에 3/4자리의 숫자를 불러서 결과를 확인
+- 시작시 제시된 4개의 숫자를 정확히 맞추면 홈런
+- 하나도 안 맞는 것을 3회 연속시 아웃
+- 10회 입력을 진행하여도 아웃으로 게임룰을 원칙으로 함
+![Baseball_Boilerplate](https://user-images.githubusercontent.com/80088956/147932802-d5637fe0-efa1-4597-bb2d-74c60a131dff.png)
 
 # 3. Basic
 
