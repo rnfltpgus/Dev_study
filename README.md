@@ -17,12 +17,14 @@
 ![Baseball_Boilerplate](https://user-images.githubusercontent.com/80088956/147932802-d5637fe0-efa1-4597-bb2d-74c60a131dff.png)
 
 # 3. Basic
-- html, css, js 등 Basic 학습 내용(주석으로 정리함)
+- `html, css, js 등` Basic 학습 내용(주석으로 정리함)
 
 # 4. Calendar_Boilerplate
 - 전반적으로 바닐라코딩에서 정의한 기능을 대상으로 구현하였음
 - 구현하면서 학습이 필요한 부분은 README.md으로 정리(event listener, callback, 비동기 처리, innerText와 innerHTML의 차이점 등)
 - `new Date()`를 활용한 구현
+- 간략화 실시간 단력 및 시간, 캘린더로 구성
+- 주석 등 코드정리는 아직진행하지못함
 - 간략화 실시간 단력 및 시간, 캘린더로 구성
 
 # 5. Carousel_Boilerplate
