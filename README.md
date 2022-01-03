@@ -24,8 +24,7 @@
 - 구현하면서 학습이 필요한 부분은 README.md으로 정리(event listener, callback, 비동기 처리, innerText와 innerHTML의 차이점 등)
 - `new Date()`를 활용한 구현
 - 간략화 실시간 단력 및 시간, 캘린더로 구성
-- 주석 등 코드정리는 아직진행하지못함
-- 간략화 실시간 단력 및 시간, 캘린더로 구성
+- 주석 등 코드정리는 아직 진행하지 못함
 
 # 5. Carousel_Boilerplate
 
