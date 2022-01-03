@@ -80,5 +80,4 @@
 
 
 # 15. test.md
-- 마크다운 용어 정리 내용 참고하려고 퍼옴
-
+- 마크다운 용어 정리 내용 참고하려고 퍼옴 (출처 : ihoneymon/how-to-write-by-markdown.md)
