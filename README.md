@@ -7,7 +7,7 @@
 > 예) #3474FF
 - 버튼 클릭 시, 랜덤한 Hex color code를 생성하여 페이지의 배경 색깔과 Hex color code 텍스트 수정하기
 
-![배경전환 이미지](/Users/jungsehyun/Downloads)
+![배경전환 이미지](/Users/jungsehyun/Downloads/BackgroundChanger.png)
 
 # 2. Baseball_Boilerplate
 
