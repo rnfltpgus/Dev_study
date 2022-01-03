@@ -74,7 +74,92 @@
 
 <!-- 요구사항
 [요구사항] Day 1
+페이지 로딩 시, 첫 번째 이미지 화면에 보이기<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/favicon.ico" />
+    <title>Carousel Project</title>
+    <script defer src="index.js"></script>
+
+    <!-- css 스타일 초기화 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+
+    <!-- Getting started for web : 구글 제공 아이콘 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <!--SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <link type="text/css" href="./style.css" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <section>
+      <div class="image-box">
+        <img src="images/vanilla_coding_logo.png" />
+      </div>
+      <h1>Carousel</h1>
+
+      <!-- Carousel Start -->
+      <div class="promotion">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/image-1.png" alt="1">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-2.png" alt="2">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-3.png" alt="3">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-4.png" alt="4">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-5.png" alt="5">
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-prev">
+          <div class="material-icons">arrow_back</div>
+        </div>
+        <div class="swiper-next">
+          <div class="material-icons">arrow_forward</div>
+        </div>
+      </div>
+      <!-- Carousel End -->
+
+    </section>
+
+  </body>
+</html>
+
+
+<!-- 요구사항
+[요구사항] Day 1
 페이지 로딩 시, 첫 번째 이미지 화면에 보이기
+좌측, 우측 화살표 두개 보이기
+화면 아래 쪽에 Dot 다섯개 보이기
+[요구사항] Day 2
+좌측 화살표 클릭시 이전 이미지 보여주기
+우측 화살표 클릭시 다음 이미지 보여주기
+[요구사항] Day 3
+5번째 이미지에서 우측 화살표를 누를 경우, 1번째 이미지 보여주기
+1번째 이미지에서 좌측 화살표를 누를 경우, 5번째 이미지 보여주기
+이미지 하단의 Dot를 누를 경우, 해당 순번의 이미지 보여주기 -->
 좌측, 우측 화살표 두개 보이기
 화면 아래 쪽에 Dot 다섯개 보이기
 [요구사항] Day 2
