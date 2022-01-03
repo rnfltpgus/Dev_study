@@ -23,10 +23,14 @@
 - 전반적으로 바닐라코딩에서 정의한 기능을 대상으로 구현하였음
 - 구현하면서 학습이 필요한 부분은 README.md으로 정리(event listener, callback, 비동기 처리, innerText와 innerHTML의 차이점 등)
 - `new Date()`를 활용한 구현
-- 간략화 실시간 단력 및 시간, 캘린더로 구성
+- 간략화 실시간 달력 및 시간, 캘린더로 구성
 - 주석 등 코드정리는 아직 진행하지 못함
 
 # 5. Carousel_Boilerplate
+- 케로줼? 슬라이더 구현
+- SWIPER API를 사용하여 구현
+![Carousel_Boilerplate](https://user-images.githubusercontent.com/80088956/147934130-6c976cc5-92e3-45ee-a7e9-a8b16e33b040.png)
+
 
 # 6. Dispatch_reminiscence
 
