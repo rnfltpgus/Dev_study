@@ -82,3 +82,7 @@
 
 # 15. test.md
 - 마크다운 용어 정리 내용 참고하려고 퍼옴 (출처 : ihoneymon/how-to-write-by-markdown.md)
+
+# 16. SCSS
+- SCSS 학습내용정리
+- 자바스크립트 정규표현식 학습 내용 정리
