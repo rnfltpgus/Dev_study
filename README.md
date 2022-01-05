@@ -70,18 +70,18 @@
 - 입문자를 위한 파이썬 기초 따라잡기 : 보안프로젝트
 - 학습내용 정리한 것이 날라가 일부만 올림
 
-# 13. regexp 
+# 13. SCSS
+- SCSS 학습내용정리
+
+# 14. regexp 
 - 자바스크립트 정규표현식 학습 내용 정리
 
 
-# 14. starbucks
+# 15. starbucks
 - 스타벅스 클론코딩
 - `html, css, js, api` 등 활용
 ![starbucks](https://user-images.githubusercontent.com/80088956/147936794-11367b2d-3b15-4b23-a0ea-0360c000b4be.png)
 
 
-# 15. test.md
+# 16. test.md
 - 마크다운 용어 정리 내용 참고하려고 퍼옴 (출처 : ihoneymon/how-to-write-by-markdown.md)
-
-# 16. SCSS
-- SCSS 학습내용정리
