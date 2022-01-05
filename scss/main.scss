@@ -1,0 +1,21 @@
+$color: royalblue;
+
+.container {
+  ul {
+    li {
+      font-size: 40px;
+      .name {
+        color: royalblue;
+      }
+      .age {
+        color: orange;
+      }
+    }
+  }
+}
+
+.fs {
+  &-small {font-size: 12px;}
+  &-medium {font-size: 14px;}
+  &-large {font-size: 16px;}
+}

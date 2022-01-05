@@ -1,0 +1,17 @@
+{
+  "name": "scss",
+  "version": "1.0.0",
+  "description": "- CSS에서 변수를 입력시, 상세 속성으로 입력할 경우 조상요소까지 항상 입력해야되는 경우가 있었는데 SCSS의 중첩기능을 활용하면 짧게 작성할 수 있음 - 변수라는 개념을 통일해서 한번에 색상같은 것을 입력 시, 오류없게 작성할 수 있게 도와줌 - 사용자 브라우저에서 돌아갈 수 있는 것은 \"CSS\"이기 때문에 결국에는 SCSS파일을 컴파일(변환)하여 사용함",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.45.2"
+  }
+}
