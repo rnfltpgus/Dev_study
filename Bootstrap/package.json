@@ -1,0 +1,22 @@
+{
+  "name": "BOOTSTRAP",
+  "version": "1.0.0",
+  "description": "프론트 엔드 오픈 소스 툴킷인 'BootStrap'은 반응형 모바일 우선 사이트를 빠르게 디자인하고 사용자 정의를 할 수 있음",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.46.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.2",
+    "boot": "^0.8.2",
+    "bootstrap": "^5.1.3"
+  }
+}

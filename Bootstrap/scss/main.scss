@@ -1,0 +1,16 @@
+@import "../node_modules/bootstrap/scss/functions"; // 함수
+@import "../node_modules/bootstrap/scss/variables"; // 변수
+@import "../node_modules/bootstrap/scss/mixins"; // 재활용
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  yellowgreen,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap" // 부트스트랩 스타일을 초기화
