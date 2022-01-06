@@ -1,21 +1,46 @@
+@import "./sub", "./sub2.scss";
+
 $color: royalblue;
 
-.container {
-  ul {
-    li {
-      font-size: 40px;
-      .name {
-        color: royalblue;
-      }
-      .age {
-        color: orange;
-      }
-    }
+.container{
+  h1 {
+    color: $color;
   }
 }
 
-.fs {
-  &-small {font-size: 12px;}
-  &-medium {font-size: 14px;}
-  &-large {font-size: 16px;}
-}
+
+// ----------------------- 이전소스 -----------------------
+// .container {
+//   ul {
+//     li {
+//       font-size: 40px;
+//       .name {
+//         color: royalblue;
+//       }
+//       .age {
+//         color: orange;
+//       }
+//     }
+//   }
+// }
+
+// .fs {
+//   &-small {font-size: 12px;}
+//   &-medium {font-size: 14px;}
+//   &-large {font-size: 16px;}
+// }
+
+// @mixin  center {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .container {
+//   @include center;
+//   .item {
+//     @include center;
+//   }
+// }
+// .box {
+//   @include center;
+// }
