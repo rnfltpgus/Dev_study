@@ -62,7 +62,7 @@
 
 
 # 11. Overwatch
-- 게임 선택창 만들기 (html, css)
+- 게임 선택창 만들기 (html, css, scss)
 ![overwatch](https://user-images.githubusercontent.com/80088956/147936032-34ac592f-b030-4b6b-b8e8-d87774d69b6f.png)
 
 
