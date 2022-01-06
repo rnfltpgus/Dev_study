@@ -31,7 +31,7 @@
 - `new Date()`를 활용한 구현
 - 간략화 실시간 달력 및 시간, 캘린더로 구성
 - 주석 등 코드정리는 아직 진행하지 못함(신청 끝나고 정리)
-- ![Calendar_Boilerplate](https://user-images.githubusercontent.com/80088956/147934726-15ac3898-eb69-47af-a949-00625c3fc7bf.png)
+![Calendar_Boilerplate](https://user-images.githubusercontent.com/80088956/147934726-15ac3898-eb69-47af-a949-00625c3fc7bf.png)
 
 
 # 6. Carousel_Boilerplate
