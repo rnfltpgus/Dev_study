@@ -10,7 +10,6 @@ Rollup | 'Tree Shaking'과 같이 효율성을 고려하는 프로젝트에 적�
 > - JavaScript 컨텍스트에서 일반적으로 사용되는 용어
 > - 코드를 최적화할때 적용되는 데드 코드 제거 기술 (사용하지 않는 코드를 제거하는 방식)
 
-
 <br>
 
 ## 1. 정적 파일 연결
@@ -40,8 +39,8 @@ Rollup | 'Tree Shaking'과 같이 효율성을 고려하는 프로젝트에 적�
 
 ### 설치 방법
 1. 터미널을 열어 `npm i -D postcss autoprefixer` 을 입력하여 첫번째, 두번쨰 모듈을 설치해 줌
-2. `package.json`파일로 이동하여, `"browserslist": ["> 1%", "last 2 versions"]`를 작성해 줌 (설정하는 이유는 'autoprefixer'에서 이 옵션을 가지고 설정하기 때문임)
-> `browserslist` 옵션은 현재 NPM 프로젝트에서 지원할 브라우저의 범위를 명시하는 용도이며, 그 명시를 Autoprefixer 패키지가 활용하게 됨<br><br>
+2. `package.json`파일로 이동하여, `"browserslist": ["> 1%", "last 2 versions"]`를 작성해 줌 (설정하는 이유는 'autoprefixer'에서 이 옵션을 가지고 설정하기 때문)
+> `browserslist` 옵션은 현재 NPM 프로젝트에서 지원할 브라우저의 범위를 명시하는 용도이며, 그 명시를 Autoprefixer 패키지가 활용하게 됨<br>
 > `["> 1%", "last 2 versions"]`의 뜻은 전세계의 점유율이 1%에 해당하는 브라우져들과 해당하는 브라우져들의 2개 버전까지는 지원하겠다는 뜻
 3. autoprefixer를 설치하는 프로젝트 안에 `.postssrc.js` 파일을 만든다.
 > 뒤에 `rc`(Runtime Configuration의 약어)가 붙은 파일은 구성 파일을 의미<br>
@@ -70,9 +69,39 @@ module.exports = {
 ```
 ```js
 // 간소화 가능
-const autoprefixer = {
+module.exports = {
   plugins: [
-    autoprefixer
+    require('autoprefixer')
   ]
 }
 ```
+
+<br>
+
+## 3. Babel
+Babel은 ECMAScript 2015+ 코드를 이전 JavaScript 엔진에서 실행할 수 있는 이전 버전과 호환되는 JavaScript 버전으로 변환하는 데 주로 사용되는 무료 오픈 소스 JavaScript 트랜스컴파일러
+
+<br>
+
+### 설치 방법
+1. 터미널을 열어 `npm i -D @babel/core @babel/preset-env` 두개의 패키지를 설치
+2. `.babelrc.js` 파일을 만든다.
+> 뒤에 `rc`(Runtime Configuration의 약어)가 붙은 파일은 구성 파일을 의미<br>
+> `.`가 붙는 파일은 구성 옵션이나 숨긴파일을 의미함
+3. 생성된 파일안에 아래의 소스를 작성
+```js
+module.exports = {
+  presets: ['@babel/preset-env']
+}
+```
+<br>
+
+### 끝으로
+> 위의 내용을 완료시, `진행중인 프로젝트의 모든 자바스크립트는 Babel을 통해서 ES5 문법으로 변환하여 동작`
+
+> 끝으로 추가로 확인할 사항은 Babel도 `"browserslist": ["> 1%", "last 2 versions"]` 을 `package.json`파일에 추가시켜 주어야 함(JavaScript 문법을 최적화 하기 때문에)
+
+<br>
+
+## 4. CLI
+[ [ 참고 사이트 ] ](https://ko.parceljs.org/cli.html) 커맨드 라인 인터페이스(CLI)
