@@ -29,7 +29,12 @@
 
 <br>
 
-# 5. Calendar_Boilerplate
+# 5. Bundler
+- Bundler 학습 내용 정리 및 실습파일 공유
+
+<br>
+
+# 6. Calendar_Boilerplate
 - 전반적으로 바닐라코딩에서 정의한 기능을 대상으로 구현하였음
 - 구현하면서 학습이 필요한 부분은 README.md으로 정리(event listener, callback, 비동기 처리, innerText와 innerHTML의 차이점 등)
 - `new Date()`를 활용한 구현
@@ -39,70 +44,70 @@
 
 <br>
 
-# 6. Carousel_Boilerplate
+# 7. Carousel_Boilerplate
 - 케로줼? 슬라이더 구현
 - SWIPER API를 사용하여 구현
 ![Carousel_Boilerplate](https://user-images.githubusercontent.com/80088956/147934130-6c976cc5-92e3-45ee-a7e9-a8b16e33b040.png)
 
 <br>
 
-# 7. Dispatch_reminiscence
+# 8. Dispatch_reminiscence
 - egoing 강의
 - 회사 파견지 짜투리 학습 및 일기(오글)
 
 <br>
 
-# 8. Google home
+# 9. Google home
 - 구글 홈페이지 만들기
 - 바닐라 코딩 선행학습, 퀴즈 풀이
 ![Google home](https://user-images.githubusercontent.com/80088956/147935403-d13c8f99-8af1-46f6-8e44-79e5260878d5.png)
 
 <br>
 
-# 9. JavaScript_Essentials
+# 10. JavaScript_Essentials
 - Node.js, nvm, npm 학습
 - javascript 기본문법 정리 및 함수 클래스 학습
 
 <br>
 
-# 10. JavaScript
+# 11. JavaScript
 - javascript 간략화 선행학습
 
 <br>
 
-# 11. TypeScript Essentials
+# 12. TypeScript Essentials
 - 일단 보류
 
 <br>
 
-# 12. Overwatch
+# 13. Overwatch
 - 게임 선택창 만들기 (html, css, scss)
 ![overwatch](https://user-images.githubusercontent.com/80088956/147936032-34ac592f-b030-4b6b-b8e8-d87774d69b6f.png)
 
 <br>
 
-# 13. Python_study
+# 14. Python_study
 - 입문자를 위한 파이썬 기초 따라잡기 : 보안프로젝트
 - 학습내용 정리한 것이 날라가 일부만 올림
 
 <br>
 
-# 14. regexp 
+# 15. regexp 
 - 자바스크립트 정규표현식 학습 내용 정리
 
 <br>
 
-# 15. SCSS
+# 16. SCSS
 - SCSS 학습내용정리
 
 <br>
 
-# 16. starbucks
+# 17. starbucks
 - 스타벅스 클론코딩
 - `html, css, js, api` 등 활용
 ![starbucks](https://user-images.githubusercontent.com/80088956/147936794-11367b2d-3b15-4b23-a0ea-0360c000b4be.png)
 
 <br>
 
-# 17. test.md
+# 18. test.md
 - 마크다운 용어 정리 내용 참고하려고 퍼옴 (출처 : ihoneymon/how-to-write-by-markdown.md)
