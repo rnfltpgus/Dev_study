@@ -18,10 +18,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [
+        test: /\.s?css$/,
+        use: [ // 읽는 순서는 아래부터 위로
           'style-loader',
-          'css-loader'
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
         ]
       }
     ]
