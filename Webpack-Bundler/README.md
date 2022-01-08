@@ -115,3 +115,51 @@ module.exports = {
 > 위와 같이 template 부분에 경로를 적어주면 생성된 프로젝트 내에 있는 파일을 지칭하게 되고 `entry` 부터 시작하여, `output > plugins` 순으로 읽어지게 된다.
 
 > 그리고 나서 읽어진 것들이 병합되어 `dist`에 만들어지게 됨
+
+
+
+
+
+
+
+
+
+
+<br>
+
+## #. 에러가 너무 많아서 작성해둠
+현재 페캠 강의를 들으면서 `npm run dev 또는 npm run build` 를 할때 애러가 자꾸 뜨고있다. 그래서 `npm ERR! code ELIFECYCLE` 를 구글에 검색해보니 해결책은 이랬다.
+
+1. 일단 캐시 제거
+2. node modules 제거
+3. package-lock.json 제거
+4. npm install(설치)
+
+```
+npm cache clean --force
+
+rm -rf node_modules package-lock.json
+
+npm install
+```
+<br>
+
+### 추가 설명
+명령어 | 설명
+-- | --
+rm | 명령어는 디렉토릴 삭제
+-rf | 하위 디렉토리까지 강제로 삭제
+
+<br>
+
+## #. 또 다른 에러 [webpack-dev-middleware] HookWebpackError: Not supported
+이번 에러는 `[webpack-dev-middleware] HookWebpackError: Not supported` 였는데, 위에 작성한 방법으로는 해결이 안되었고 내용을 확인해보니 아마도 `copy-webpack-plugin`의 버전이 높아서 호환이 안되서 뜬것으로 판단되었다. 그래서 아래와 같이 `plugin의 버전`을 다운하니 해결되었음
+
+```
+npm install copy-webpack-plugin@9 -D
+```
+
+또 다른 방법으로는 노드버전이 낮을 수도 있기 때문에 노드 버전을 업그래이드하라는 소리도 있었음
+```
+npm install code@버전 -g
+```
