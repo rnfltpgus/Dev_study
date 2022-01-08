@@ -116,7 +116,6 @@ module.exports = {
 
 > 그리고 나서 읽어진 것들이 병합되어 `dist`에 만들어지게 됨
 
-
 <br>
 
 ## 4. module
@@ -149,7 +148,6 @@ import '../css/main.css'
     ]
   },
 
-  // 번들링 후 결과물의 처리 방식 등 다양한 플러그인들을 설정
   plugins: [
     new HtmlPlugin({
 ```
@@ -158,6 +156,120 @@ import '../css/main.css'
 
 ### 추가설명
 1. `이스케이프 문자(Escape String)`는 백슬래시를 사용해 원래의 의미를 벗어나는 문자를 만들어 낼수 있음, `정규표현식에서 .(마침표)`은 '임의의 한 문자'를 의미하기 때문에, `그 의미에서 벗어나 단순 맞침표로 해석될 수 있도록 이스케이프 문자로 만들어 줘야 함`
+
+<br>
+
+## 5. SCSS
+`webpack`에 `scss` 적용하기
+
+<br>
+
+### 사용방법 (예시)
+1. 터미널에 `scss` 를 읽을 수 있는 `loader`를 이와 같이 `npm i -D sass-loader sass` 입력하여, 개발 의존성으로 설치해 준다. (여기서 `sass-loader`은 파일을 읽을 수 있게 하는 역할을 가지고, `sass`은 문법을 읽을 수 있게 해주는 역할)
+2. 그리고 나서 `webpack.config.js` 에 아래와 같이 입력하여 설치한 패키지 명을 기입해준다.(따로 'sass' 안적어도 되는 듯함)
+
+```js
+    clean: true
+  },
+  // 기존에 작성된 코드 중간 쯤에 적어주었음
+  module: {
+    rules: [
+      {
+        test: /\.s?css$/,  // 's'라는 단어가 있을수도 없을수도 있다는 정규표현식
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-lodaer' // webpack에서 scss 파일을 읽을 수 있게 하는 역할의 패키지
+        ]
+      }
+    ]
+  },
+
+  plugins: [
+    new HtmlPlugin({
+```
+
+<br>
+
+## 6. Autoprefixer(PostCSS)
+브라우저를 제작하는 `밴더사(구글, 마이크로소프트 등)`에서 자신의 브라우저에서 동작할 수 있게 자동으로 붙여주는 플러그인
+
+> 표준 기술이 동작할수 없는 브라우져에서 그 브라우저에 접두사로 적용된 속성에서 실제로 적용될 수 있게 도와주는 것
+
+같이 알아두면 좋은 것으로
+> `공급 업체 접두사란?` 밴더 프리픽스(Vender Prefix)
+> 주요 웹 브라우저가의 공급자가 새로운 실험적인 기능을 제공할 때 이전 버전의 웹 브라우저에 그 사실을 알려주기 위해 사용하는 접두사를 의미하며, 아직 CSS 권고안에 포함되지 못하거나, 포함은 되었으나 완전히 제정된 상태가 아닌 기능을 사용할 때 벤더 프리픽스를 사용함
+
+<br>
+
+### 사용방법 (예시)
+1. 아래와 같이 터미널에 명령어를 입력한다.
+```
+npm i -D postcss autoprefixer postcss-loader
+```
+총 3가지의 패키지를 개발 의존성으로 설치한다. 여기서 `postcss` 는 스타일의 후처리를 도와주는 패키지로 그 안에서 `autoprefixer` 라는 공급 업체 접두사를 자동으로 붙여주며, 마지막으로 이 2개의 패키지가 `webpack` 에서 동작할 수 있도록 `postcss-loader` 가 도와준다.
+
+2. 설치를 완료하였으면 `webpack.config.js`로 이동하여 아래처럼 작성해준다. (`rules - use` 부분에 입력된 순서는 아래부터 차차 읽어지면서 올라가는 순임, 해당 작성된 순서로 입력된 것이 좋다.)
+```js
+    clean: true
+  },
+  // 기존에 작성된 코드 중간 쯤에 적어주었음
+  module: {
+    rules: [
+      {
+        test: /\.s?css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-lodaer'
+        ]
+      }
+    ]
+  },
+
+  plugins: [
+    new HtmlPlugin({
+```
+3. 이제 `package.json` 파일에 `Parcel`러와 같이 `browerslist` 옵션을 입력해준다.`browerslist`은 npm 프로젝트에서 지원할 브라우저의 범위를 명시하는 용도이다.
+```js
+ // 작성된 코드의 내용은 전 세계의 점유율이 1% 이상인 모든 브라우저의 현버전외 아래로 2개 까지의 버전까지 지원하겠다는 의미
+
+"browserslist": [
+  "> 1%",
+  "last 2 versions"
+]
+```
+4. `.postcssrc.js` 파일을 프로젝트 내 생성하여 아래의 코드를 입력해준다.
+```js
+module.exports = {
+  plugins: [
+    require('autoprefixer')
+  ]
+}
+```
+주로 사용하는 `import`, `export` 는 node.js 환경에서는 사용이 불가하여, CommonJS 방식인 `require()`, `module exports` 키워드를 이용하여 javascript 파일을 가져오고 내보냄
+
+5. 위의 단계를 모두 완료하고 개발서버를 오픈하면 종종 에러가 뜰 수도 있는데, 아마 `autoprefixer`와 `postcss`의 버전 충돌이니 거의 `autopreixer`의 버전을 맞추어주면 해결될 것
+```js
+npm i autoprefixer@9 -D
+```
+6. 끝으로 개발서버가 들어가지면 개발자도구를 열어서, 공급업체 접두사가 확인된다면 설치가 완료된 것임
+
+<br>
+
+### 추가설명
+1. `require()` : 해당 메서드를 통해 외부 모듈을 가져올 수 있음, 파라미터로 추가할 모듈의 파일 경로값을 받음
+```js
+const sany = require('파일 경로');
+```
+2. `module exports` : `require()` 함수를 사용했을 때 반환 받는 변수, 비어 있는 객체가 기본값이며, 어떤 것으로도 자유롭게 변경할 수 있음
+3. `exports` : 자체는 절대 반환되지 않음, `exports`는 단순히 `module exports` 를 참조하고, 이 변수는 사용하면 모듈을 작성할 때 더 적은 양의 코드로 작성할 수 있음
+```js
+exports.method = function () { /* ... */ }
+// vs.
+module.exports.method = function () { /* ... */ }
+```
 
 
 
