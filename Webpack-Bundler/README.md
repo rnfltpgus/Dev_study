@@ -271,7 +271,63 @@ exports.method = function () { /* ... */ }
 module.exports.method = function () { /* ... */ }
 ```
 
+<br>
 
+## 7. Babel
+Babel은 ECMAScript 2015+ 코드를 이전 JavaScript 엔진에서 실행할 수 있는 이전 버전과 호환되는 JavaScript 버전으로 변환하는 데 주로 사용되는 무료 오픈 소스 JavaScript 트랜스컴파일러
+
+<br>
+
+### 설치방법 및 설정
+1. 터미널을 열어 개발 의존성 모듈로 3가지를 설치
+```
+npm i -D @babel/core @babel/preset-env @babel/plugin-transform-runtime
+```
+2. 설치 완료 후 `.babelrc.js` 마침표로 시작하는 구성 옵션이나 숨김파일을 의미하는 파일을 만들어 준다.
+3. 만들어진 파일 내에 아래의 코드를 작성
+```js
+module.exports = {
+  presets: ['@babel/preset-env'], // 일일이 명시해주어야 하는 javascript 명령을 한번에 지원하는 패키지
+  plugins: [
+    // 비동기 처리를 위한 plugin, 2차원 배열로 작성됨
+    ['@babel/plugin-transform-runtime']
+  ]
+}
+```
+4. `webpack.config.js`로 이동하여 아래처럼 코드를 작성
+```js
+  module: {
+    rules: [
+      { // 지난번 Autoprefixer 설치시 작성했던 것
+        test: /\.s?css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      { // 이부분
+        test: /\.js$/,
+        use: [
+          'babel-loader'
+        ]
+      }
+    ]
+  },
+```
+위 처럼 작성시, `.js` 확장자로 끝나는 파일들을 `webpack` 에서 `babel-loader` 로 읽어들여 `Babel`이 적용될 수 있도록 해준다.
+
+5. 마지막으로 `babel-lodar`를 설치해주면 끝
+```
+npm i -D babel-loader
+```
+<br>
+
+## 끝으로
+> 위의 내용을 완료시, `프로젝트에서 작성하는 모든 Javascript`는 Babel을 통해 ES5버전으로 변환되어 브라우저에서 동작하게 됨
+
+> 추가로 확인할 사항은 Babel도 "browserslist": ["> 1%", "last 2 versions"] 을 package.json파일에 추가시켜 주어야 함(JavaScript 문법을 최적화 하기 때문에)
 
 
 
