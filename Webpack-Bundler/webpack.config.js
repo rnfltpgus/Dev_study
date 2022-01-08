@@ -1,6 +1,7 @@
 // import
 const path = require('path')
 const HtmlPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 // export
 module.exports = {
@@ -18,6 +19,11 @@ module.exports = {
   plugins: [
     new HtmlPlugin({
       template: './index.html'
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'static' }
+      ]
     })
   ],
   devServer: {
