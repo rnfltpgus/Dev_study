@@ -1,0 +1,12 @@
+{
+  "name": "React_show",
+  "version": "1.0.0",
+  "description": "리액트는 개발을 위해 다른 라이브러리들의 지원이 필요한 유연한 프레임워크",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
