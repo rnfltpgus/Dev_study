@@ -251,3 +251,25 @@ CDN을 통한 리액트 라이브러리 사용
 <br>
 
 3. 리액트로 변경할 경우
+```js
+    const Component = (props) => {
+      return React.createElement(
+        'p',
+        null,
+        `${props.messge} : ${props.count}`
+      );
+    };
+
+
+    ReactDOM.render(
+      React.createElement(Component, {messge: "init", count: 0}, null),
+      document.querySelector("#root")
+    );
+
+    document.querySelector('#btn_plus').addEventListener('click', () => {
+      ReactDOM.render(
+        React.createElement(Component, {messge: "update", count: 10}, null),
+        document.querySelector("#root")
+      );
+    })
+```
