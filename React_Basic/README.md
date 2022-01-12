@@ -87,7 +87,7 @@ No|특징
 <br>
 
 ## 2. Component란?
-src, class, name, props 밖에서 넣어준느 데이터
+src, class, name, props 밖에서 넣어주는 데이터
 
 문서(html), 스타일(css), 동작(javascript)을 합쳐서 내가 만든 일종의 태그를 뜻함
 
@@ -100,6 +100,143 @@ src, class, name, props 밖에서 넣어준느 데이터
 ```html
 <내가지은이름1 name="Mark" />
 <내가지은이름 prop={fale}>내용</내가지은이름>
+```
+
+<br>
+
+### Component 만드는 법
+`Hooks`가 생긴 이후에는 `function Component`만 있어도 가능 하지만 둘다 알아보자.
+
+<br>
+
+#### Hooks 이전 vs Hooks 이후
+Hooks 이전 | Hooks 이후
+--|--
+컴포넌트 내부에 상태가 있으면? class | function Component
+컴포넌트 내부에 상태가 없고 라이프사이클을 사용해야 한다면? class | function Component
+컴포넌트 내부에 상태가 없고 라이프사이클에 관계가 없다면? function | function Component
+
+<br>
+
+### Class 컴포넌트
+- Class 컴포넌트 작성(예시)
+```js
+import React from 'react';
+
+// 정의
+class ClassComponent extends React.Component {
+  render() {
+    return <div>Hello</div>;
+  }
+}
+
+// 사용
+ReactDOM.render(
+  <ClassComponent />,
+  document.querySelector('#root')
+)
+```
+
+<br>
+
+### Function 컴포넌트
+- Function 컴포넌트 작성(예시)
+```js
+import React from 'react';
+
+// 정의 1
+function FunctionComponent() {
+  return <div>Hello</div>;
+}
+
+// 정의 2
+const FunctionComponent  = () => <div>Hello</div>;
+
+// 사용
+ReactDOM.render(
+  <FunctionComponent />,
+  document.querySelector('#root')
+)
+```
+
+<br>
+
+### React.createElement로 컴포넌트 만들기
+```js
+React.createElement(
+  type, // 태그 이름 문자열 | 리액트 컴포넌트 | React.Fragment
+  [props], // 리액트 컴포넌트에 넣어주는 데이터 객체
+  [... children] // 자식으로 넣어주는 요소들
+)
+```
+
+<br>
+
+#### 1. 태그 이름 문자열 type
+```js
+// <h1>type 이 "태그 이름 문자열" 입니다.</h1>
+React.render(
+  React.createElement("h1", null, `type 이 "태그 이름 문자열" 입니다.`)
+  document.querySelector('#root')
+);
+```
+#### 2. 리액트 컴포넌트 type
+```js
+const Component = () => {
+  return React.createElement('p', null, `type 이 "React 컴포넌트" 입니다.`);
+};
+
+// <Component></Component> => <Component /> => <p>type 이 "태그 이름 문자열" 입니다.</p>
+React.render(
+  React.createElement(Component, null, null),
+  document.querySelector('#root')
+);
+```
+#### 3. React.Fragment
+`React.Fragment`사용하면 3번째 인수인 자식들의 요소를 많이 넣는 것도 가능
+```js
+ReactDOM.render(
+  React.createElement(
+    React.Fragment,
+    null,
+    `type 이 "React Fragment" 입니다.`
+    `type 이 "React Fragment" 입니다.`
+    `type 이 "React Fragment" 입니다.`
+  ),
+  document.querySelector('#root')
+);
+```
+#### 4. 복잡한 리액트 엘리먼트 모임
+이렇게 사용한다면 답답하고 복잡하며 힘들것임
+```js
+  // <div>
+  //   <div>
+  //     <h1>주제</h1>
+  //     <ul>
+  //       <li>React</li>
+  //       <li>Vue</li>
+  //     </ul>
+  //   </div>
+  // </div>
+
+ReactDOM.render(
+  React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "div",
+      null,
+      React.createElement("h1", null, "주재"),
+      React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null, "React"),
+        React.createElement("li", null, "Vue"),
+      )
+    )
+  );
+  document.querySelector('#root')
+);
 ```
 
 <br>
@@ -138,6 +275,8 @@ DOM을 직접 제어하지 않는 경우
 3. Browser executes React
 4. Page Now interactable
 
+<br>
+
 ### 결론
 `SSR`을 도입하는것이 쉽지않기 떄문에, `개발의 난이도`와 `분명한 효과`를 위한다면 `SSR`을 추천하고 다른 이유로 해야된다면  다른 이유에 맞는 솔루션을 도입하는 것이 맞아보임
 
@@ -153,7 +292,6 @@ import ReactDOM from 'react-dom';
 // 2. 리액트 컴포넌트 만들기
 import React from 'react'
 ```
-
 2. "만들어진 리액트 컴포넌트"를 실제 HTMLElement에 연결할 때 ReactDOM 라이브러리를 이용함
 - https://reactjs.org/docs/react-dom.html
 - https://ko.reactjs.org/docs/react-dom.html
